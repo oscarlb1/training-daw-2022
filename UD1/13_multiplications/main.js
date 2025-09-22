@@ -1,5 +1,11 @@
 function printMultiplicationTables() {
-
+    for (let i = 1; i <= 10; i++) {
+        let fila = '';
+        for (let k = 1; k <=10; k++) {
+            fila += i * k + '\t'
+        }
+        console.log(fila)
+    }
 }
 
 printMultiplicationTables()

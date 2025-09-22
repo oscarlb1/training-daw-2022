@@ -10,32 +10,28 @@ function doCalculation(array) {
     let suma = 0;
     let max = array[0];
     let min = array[0];
+    let media = 0;
 
     //suma
     for (let i =0; i < array.length; i++) {
+        //suma
         suma += array [i];
-    }
-
-    //max
-    max = array[0]
-    for (let i = 0; i < array.length; i++) {
+        
+        //max
         if (array[i] > max ) {
             max = array[i]
         }
-    }
-
-    //min
-    min = array[0]
-    for (let i = 0; i < array.length; i++) {
+        
+        //min
         if (array[i] < min ) {
             min = array[i]
         }
+
+        //media
+        media = suma / array.length;
     }
 
-    //media
-    const media = suma / array.length;
-    
-    
+    //LOGS
     console.log("Media:", media);
     console.log("Suma:", suma);
     console.log("Max:", max);
