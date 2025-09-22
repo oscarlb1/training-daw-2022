@@ -8,8 +8,8 @@
 
 function doCalculation(array) {
     let suma = 0;
-    let max = 0;
-    let min = 0;
+    let max = array[0];
+    let min = array[0];
 
     //suma
     for (let i =0; i < array.length; i++) {
@@ -17,11 +17,26 @@ function doCalculation(array) {
     }
 
     //max
-    
+    max = array[0]
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > max ) {
+            max = array[i]
+        }
+    }
+
     //min
+    min = array[0]
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < min ) {
+            min = array[i]
+        }
+    }
 
     //media
-
+    const media = suma / array.length;
+    
+    
+    console.log("Media:", media);
     console.log("Suma:", suma);
     console.log("Max:", max);
     console.log("Min:", min);
