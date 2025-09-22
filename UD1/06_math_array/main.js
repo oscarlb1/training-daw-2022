@@ -7,9 +7,26 @@
 
 
 function doCalculation(array) {
+    let suma = 0;
+    let max = 0;
+    let min = 0;
 
+    //suma
+    for (let i =0; i < array.length; i++) {
+        suma += array [i];
+    }
 
-}
+    //max
+    
+    //min
+
+    //media
+
+    console.log("Suma:", suma);
+    console.log("Max:", max);
+    console.log("Min:", min);
+  }
+
 
 
 
