@@ -1,12 +1,19 @@
 function printMultiplicationTables() {
-    for (let i = 1; i <= 10; i++) {
-        let fila = '';
-        for (let k = 1; k <=10; k++) {
-            fila += i * k 
-        }
-        console.log(fila)
+    
+    let rows = '\t';
+    for (let j = 1; j <= 10; j++) {
+        rows += j + '\t';
     }
-}
+    console.log(rows);
+
+    for (let i = 1; i <= 10; i++) {
+      let columns = i + '\t';
+      for (let k = 1; k <= 10; k++) {
+        columns += (i * k) + '\t';
+      }
+      console.log(columns);
+    }
+  }
 
 printMultiplicationTables()
 // expected output

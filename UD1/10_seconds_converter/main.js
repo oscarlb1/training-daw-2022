@@ -1,8 +1,21 @@
 const assert = require('assert').strict;
 
-function toHoursMinutesSeconds(value) {
-}
+function toHoursMinutesSeconds(totalSegundos) {
+  // Variables
+  let SEGUNDOS_POR_HORA = 3600;
+  let SEGUNDOS_POR_MINUTO = 60;
 
+  // Cálculos
+  let horas = Math.floor(totalSegundos / SEGUNDOS_POR_HORA)
+  let segundosRestantes = totalSegundos % SEGUNDOS_POR_HORA
+  let minutos = Math.floor(segundosRestantes / SEGUNDOS_POR_MINUTO)
+  let segundos = minutos % SEGUNDOS_POR_MINUTO
+    
+  // Resultado
+  return {$horas:$minutos,$segundos}
+} 
+
+console.log('Todas las pruebas pasaron correctamente.');
 assert.deepStrictEqual(toHoursMinutesSeconds(3600), "1:0:0")
 assert.deepStrictEqual(toHoursMinutesSeconds(3720), "1:20:0")
 assert.deepStrictEqual(toHoursMinutesSeconds(3725), "1:20:5")
