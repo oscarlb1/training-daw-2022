@@ -9,13 +9,13 @@ function toHoursMinutesSeconds(totalSegundos) {
   let horas = Math.floor(totalSegundos / SEGUNDOS_POR_HORA)
   let segundosRestantes = totalSegundos % SEGUNDOS_POR_HORA
   let minutos = Math.floor(segundosRestantes / SEGUNDOS_POR_MINUTO)
-  let segundos = minutos % SEGUNDOS_POR_MINUTO
+  let segundos = segundosRestantes % SEGUNDOS_POR_MINUTO;
     
   // Resultado
-  return {$horas:$minutos,$segundos}
+  return `${horas}:${minutos}:${segundos}`;
 } 
 
-console.log('Todas las pruebas pasaron correctamente.');
 assert.deepStrictEqual(toHoursMinutesSeconds(3600), "1:0:0")
-assert.deepStrictEqual(toHoursMinutesSeconds(3720), "1:20:0")
-assert.deepStrictEqual(toHoursMinutesSeconds(3725), "1:20:5")
+assert.deepStrictEqual(toHoursMinutesSeconds(3720), "1:2:0")
+assert.deepStrictEqual(toHoursMinutesSeconds(3725), "1:2:5")
+console.log('Todas las pruebas pasaron correctamente.');
