@@ -58,20 +58,41 @@ function rebels() {
 function totalFaction(faction) {
   console.log('--- totalFaction ---');
   // return pilots.filter(p => p.faction === faction).length;
+  const totalPilotos = pilots.reduce((acumulacion, pilot) => {
+    if (pilot.faction === faction) {
+      return acumulacion + 1;
+    }
+    return acumulacion;
+  }, 0); 
+  
+  console.log(`Facción ${faction} tiene ${totalPilotos} pilotos. `);
+  return totalPilotos;
 }
 
 function avgYears(faction) {
+  console.log('--- avgYears ---');
+  
+  // Filtrar pilotos
+  const factionPilots = pilots.filter(pilots => pilots.faction === faction);
+  
+  // Sumar años 
+  const añosTotales = factionPilots.reduce((acc, pilots) => acc + pilots.years, 0);
+
+  // Calcular media 
+  const average = añosTotales / factionPilots.length;
+  
+  console.log(`Facción ${faction} media años: ${average}`);
+  return average;
 }
 
-// use console.log
 iterateSimple()
 iterateForEach()
 try {
   assert.deepStrictEqual(mapIds(), [2,8,40,66])
   assert.deepStrictEqual(rebels(), [pilots[0], pilots[3]])
   assert.deepStrictEqual(totalFaction('Rebels'), 2)
-  // assert.deepStrictEqual(avgYears('Rebels'), 22.5)
-  // assert.deepStrictEqual(avgYears('Empire'), 25)
+  assert.deepStrictEqual(avgYears('Rebels'), 22.5)
+  assert.deepStrictEqual(avgYears('Empire'), 25)
 } catch (error) {
   console.error(error)
 }
