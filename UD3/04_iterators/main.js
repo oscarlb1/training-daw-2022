@@ -82,7 +82,7 @@ function avgYears(faction) {
   const media = añosTotales / factionPilots.length;
   
   console.log(`Facción ${faction} media años: ${media}`);
-  return average;
+  return media;
 }
 
 iterateSimple()
