@@ -1,19 +1,33 @@
+// Variable global para el ID autoincremental, iniciada en el valor del último ID existente.
+let currentID = 0; 
+
 function onClick() {
-    let tbody = document.getElementsByTagName('tbody')[0]
+    currentID++;
 
-    let tr = document.createElement('tr')
-    let td = document.createElement('td')
-    td.innerText = '0'
-    tr.appendChild(td)
+    let tbody = document.getElementsByTagName('tbody')[0];
+    let tr = document.createElement('tr');
 
-    td = document.createElement('td')
-    td.innerText = 'Example'
-    tr.appendChild(td)
+    let tdID = document.createElement('td');
+    tdID.innerText = currentID;
+    tr.appendChild(tdID);
 
-    td = document.createElement('td')
-    td.innerText = 'Surname'
-    tr.appendChild(td)
+    let tdName = document.createElement('td');
+    tdName.innerText = 'Example';
+    tr.appendChild(tdName);
 
-    tbody.appendChild(tr)
-    console.log('add')
+    let tdSurname = document.createElement('td');
+    tdSurname.innerText = 'Surname';
+    tr.appendChild(tdSurname);
+    
+    let tdActions = document.createElement('td');
+    let editLink = document.createElement('a');
+    
+    editLink.href = 'http://localhost/edit/' + currentID;
+    editLink.innerText = 'Editar';
+    
+    tdActions.appendChild(editLink);
+    tr.appendChild(tdActions);
+
+    tbody.appendChild(tr);
+    console.log('Registro añadido con ID:', currentID);
 }
