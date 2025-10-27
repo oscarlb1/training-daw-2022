@@ -5,14 +5,43 @@
 <script type="text/javascript">
 window.onload = function() {
 	// Numero de enlaces de la pagina
+	var allLinks = document.getElementsByTagName("a");
+    var numLinks = allLinks.length;
+    console.log("Número de enlaces de la página:", numLinks);
+    document.body.innerHTML += "<p><strong>1. Número de enlaces de la página:</strong> " + numLinks + "</p>";
 
 	// Direccion del penultimo enlace
+	var allLinks = document.getElementsByTagName("a");
+	var penultimoLink = allLinks[allLinks.length -2] 
+	console.log("Dirección del penúltimo enlace:", penultimoLink);
 
 	// Numero de enlaces que apuntan a http://prueba
+	var allLinks = document.getElementsByTagName("a");
+	var contEnlances = 0;
+	for (var i = 0; i < allLinks.length; i++) {
+		if (allLinks[i].href === "http://prueba/") {
+			contEnlaces++;
+		}
+		}
+		console.log("Número de enlaces a http://prueba/:", contEnlaces);
+	}
 
 	// Numero de enlaces del tercer párrafo
+    var paragraphs = document.getElementsByTagName("p");
+    var numLinksInThirdP = 0;
+    if (paragraphs.length >= 3) {
+        numLinksInThirdP = paragraphs[2].getElementsByTagName("a").length;
+    }
+    
+    // Crear un nodo <div>, con un nodo <p> dentro y añadirlo al documento
+    var newDiv = document.createElement("div");
+    var newP = document.createElement("p");
+    var textP = document.createTextNode("Este es un nuevo párrafo creado con DOM.");
+    
+    newP.appendChild(textP);
+    newDiv.appendChild(newP);
+    document.body.appendChild(newDiv);
 
-}
 </script>
 </head>
 <body>
