@@ -1,4 +1,3 @@
-// Variable global para el ID autoincremental, iniciada en el valor del último ID existente.
 let currentID = 0; 
 
 function onClick() {
