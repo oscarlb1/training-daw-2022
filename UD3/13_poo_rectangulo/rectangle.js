@@ -29,7 +29,7 @@ let r2 = new Rectangle(3,4);
 r1.print()
 r2.print()
 
-// let area = r1.area();
-// console.log(`area ${area}`)
+let area = r1.area();
+console.log(`area ${area}`)
 
-// let isOverlay = r1.overlay(r2)
+let isOverlay = r1.overlay(r2)
